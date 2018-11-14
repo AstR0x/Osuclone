@@ -1,0 +1,50 @@
+.display {
+  display: flex;
+  width: 1280px;
+  height: 720px;
+  margin: 0 auto;
+  border: 2px black solid;
+  background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+}
+
+#grid {
+  display: none;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2vw;
+}
+
+#grid div {
+  border-radius: 40px;
+  background-color: #000;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  padding-top: 18px;
+  font-size: 40px;
+  box-sizing: border-box;
+  color: #fff;
+  visibility: hidden;
+}
+
+.button-start {
+  box-sizing: border-box;
+  padding-top: 5px;
+  font-size: 30px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-left: 540px;
+  margin-top: 310px;
+  height: 50px;
+  width: 180px;
+}
+
+.button-start:hover {
+  color: #fff;
+  background-color: #000;
+  transition-duration: 0.2s;
+}
+
+
