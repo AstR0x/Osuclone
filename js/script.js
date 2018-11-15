@@ -20,7 +20,7 @@ $(document).ready(function () {
       let numberOfCircle;
       for(var i = 1; i <= amountOfCircle; i++) {
         // numberOfCircle = getRandomNumber(1, 55);
-
+        console.log(randomArray);
         gridChild.eq(randomArray[i - 1])
           .css({'visibility':'visible',
             'background-color':`rgb(
@@ -41,11 +41,16 @@ $(document).ready(function () {
            var id = ($(this).attr('id'));
            id = id[id.length - 1];
            for(var i = 1; i <= id; i++) {
-            $(`#circleNumber${i}`).fadeOut(150);
+             if(i == id) {
+               $(`#circleNumber${i}`).text('\u2713').css( { 'font-size':'+=8px', 'padding-top':'-=10px' } );
+             } else {
+               $(`#circleNumber${i}`).text('\u274c').css( { 'background-color':'#ff3333','font-size':'+=8px', 'padding-top':'-=10px'} );
+             }
+             $(`#circleNumber${i}`).animate( { 'opacity':'0', 'visiblity':'hidden' }, 300);
            }
-
-
-         })
+           score += 100;
+           console.log(score);
+         });
 
       })
     };
