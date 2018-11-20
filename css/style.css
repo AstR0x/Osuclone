@@ -1,14 +1,21 @@
 .display {
-  display: flex;
-  width: 1280px;
-  height: 720px;
+  width: 1440px;
+  height: 750px;
   margin: 0 auto;
+  margin-top: 100px;
   border: 2px black solid;
-  background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+  background: repeating-radial-gradient(circle,
+    #B9ECFE,
+    #B9ECFE 10px,
+    #82DDFF 10px,
+    #82DDFF 20px);
 }
 
 #grid {
-  display: none;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 1280px;
+  display: flex;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 2vw;
@@ -35,8 +42,8 @@
   background-color: #fff;
   border: 1px solid #000;
   border-radius: 10px;
-  margin-left: 540px;
-  margin-top: 310px;
+  margin-left: 630px;
+  margin-top: 350px;
   height: 50px;
   width: 180px;
 }
@@ -45,6 +52,19 @@
   color: #fff;
   background-color: #000;
   transition-duration: 0.2s;
+}
+
+.score {
+  background-color: white;
+  border: black solid 1px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: none;
+  font-size: 40px;
+  margin-left: 55px;
+  margin-top: 50px;
+  text-align: center;
+  width: 100px;
 }
 
 
