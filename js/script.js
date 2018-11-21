@@ -1,9 +1,19 @@
 $(document).ready(function () {
 
-  let clickSound1 = new Audio();
-  let clickSound2 = new Audio();
+  clickSound1 = new Audio();
+  clickSound1 = new Audio();
+  clickSound2 = new Audio();
+  clickSound3 = new Audio();
+  clickSound4 = new Audio();
+  clickSound5 = new Audio();
+
   clickSound1.src = 'sounds/clickSound1.mp3';
   clickSound2.src = 'sounds/clickSound2.mp3';
+  clickSound3.src = 'sounds/clickSound3.mp3';
+  clickSound4.src = 'sounds/clickSound4.mp3';
+  clickSound5.src = 'sounds/clickSound5.mp3';
+
+  var sounds = [clickSound1, clickSound2, clickSound3, clickSound4, clickSound5];
 
   let point = 0;
   const grid = $('#grid');
@@ -103,11 +113,7 @@ $(document).ready(function () {
     }
 
     function getSound() {
-      if (getRandomNumber(0, 1)) {
-        clickSound1.play();
-      } else {
-        clickSound2.play();
-      }
+      sounds[getRandomNumber(0, 4)].play();
     }
 
     function getTime() {
@@ -121,8 +127,7 @@ $(document).ready(function () {
       grid.fadeOut();
       timeBlock.fadeOut();
       scoreBlock.fadeOut();
-      finishScore.fadeIn()
-        .text(`Time is over!\nYour score: ${point}`);
+      finishScore.fadeIn().text(`Time is over!\nYour score: ${point}`);
     }
 
 
