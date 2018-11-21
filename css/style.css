@@ -1,31 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .display {
-  width: 1440px;
-  height: 750px;
+  width: 1280px;
+  height: 720px;
   margin: 0 auto;
-  margin-top: 100px;
-  border: 2px black solid;
-  background: repeating-radial-gradient(circle,
-    #B9ECFE,
-    #B9ECFE 10px,
-    #82DDFF 10px,
-    #82DDFF 20px);
+  border: 1px black solid;
+  background: radial-gradient(40% 50%, #FAECD5, #CAE4D8);
 }
 
 #grid {
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
   width: 1280px;
-  display: flex;
+  height: 720px;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 2vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
 #grid div {
-  border-radius: 40px;
+  border-radius: 50px;
   background-color: #000;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   text-align: center;
   padding-top: 18px;
   font-size: 40px;
@@ -40,9 +40,8 @@
   font-size: 30px;
   text-align: center;
   background-color: #fff;
-  border: 1px solid #000;
   border-radius: 10px;
-  margin-left: 630px;
+  margin: 0 auto;
   margin-top: 350px;
   height: 50px;
   width: 180px;
@@ -54,18 +53,112 @@
   transition-duration: 0.2s;
 }
 
-.score {
+.score-block {
   background-color: white;
-  border: black solid 1px;
-  border-radius: 20px;
   box-sizing: border-box;
   display: none;
   font-size: 40px;
   margin-left: 55px;
-  margin-top: 50px;
   text-align: center;
-  width: 100px;
+  width: 200px;
 }
+
+.time-block {
+  background-color: white;
+  box-sizing: border-box;
+  display: none;
+  font-size: 40px;
+  margin-left: 55px;
+  text-align: center;
+  width: 200px;
+}
+
+.time-score {
+  display: flex;
+}
+
+.finish-score {
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-top: 300px;
+  width: 250px;
+  display: none;
+  font-size: 30px;
+}
+
+
+
+@media screen and (min-width: 1336px) {
+  .display {
+    width: 1336px;
+    height: 658px;
+  }
+
+  #grid {
+    width: 1296px;
+    height: 548px;
+  }
+
+  #grid div {
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    padding-top: 12px;
+    font-size: 68px;
+  }
+
+@media screen and (min-width: 1440px) {
+  .display {
+    width: 1440px;
+    height: 810px;
+  }
+
+  #grid {
+    width: 1400px;
+    height: 720px;
+  }
+
+  #grid div {
+    border-radius: 44px;
+    width: 88px;
+    height: 88px;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 56px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .display {
+    width: 1920px;
+    height: 990px;
+  }
+
+  #grid {
+    width: 1880px;
+    height: 900px;
+  }
+
+  #grid div {
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    padding-top: 12px;
+    font-size: 68px;
+  }
+
+  .button-start {
+    margin-top: 450px;
+    width: 250px;
+    height: 60px;
+    padding-top: 5px;
+    font-size: 40px;
+  }
+}
+
+
+
+
 
 
 
