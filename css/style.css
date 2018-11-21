@@ -36,21 +36,21 @@ body {
 
 .button-start {
   box-sizing: border-box;
-  padding-top: 5px;
+  padding-top: 8px;
   font-size: 30px;
   text-align: center;
   background-color: #fff;
-  border-radius: 10px;
   margin: 0 auto;
   margin-top: 350px;
   height: 50px;
   width: 180px;
+  text-transform: uppercase;
 }
 
 .button-start:hover {
   color: #fff;
   background-color: #000;
-  transition-duration: 0.2s;
+  transition-duration: 0.5s;
 }
 
 .score-block {
@@ -61,6 +61,7 @@ body {
   margin-left: 55px;
   text-align: center;
   width: 200px;
+  text-transform: uppercase;
 }
 
 .time-block {
@@ -71,6 +72,7 @@ body {
   margin-left: 55px;
   text-align: center;
   width: 200px;
+  text-transform: uppercase;
 }
 
 .time-score {
@@ -81,17 +83,34 @@ body {
   text-transform: uppercase;
   margin: 0 auto;
   margin-top: 300px;
-  width: 250px;
+  width: 300px;
   display: none;
-  font-size: 30px;
+  font-size: 40px;
+  line-height: 1.5em;
+  text-align: center;
 }
 
+.try-again-button {
+  margin: 0 auto;
+  maring-top: 20px;
+  width: 300px;
+  display: none;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
+.try-again-button:hover {
+  color: #fff;
+  background-color: #000;
+  transition-duration: 0.5s;
+}
 
 @media screen and (min-width: 1336px) {
   .display {
     width: 1336px;
-    height: 658px;
+    height: 695px;
   }
 
   #grid {
@@ -101,11 +120,39 @@ body {
 
   #grid div {
     border-radius: 50px;
-    width: 100px;
-    height: 100px;
-    padding-top: 12px;
-    font-size: 68px;
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
   }
+
+  .button-start {
+    margin-top: 300px;
+  }
+
+  .time-score {
+    margin-top: 30px;
+  }
+
+  .score-block {
+    font-size: 30px;
+    width: 150px;
+  }
+
+  .time-block {
+    font-size: 30px;
+    width: 150px;
+  }
+
+  .finish-score {
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-top: 200px;
+    width: 320px;
+    display: none;
+    font-size: 40px;
+    line-height: 1.5em;
+  }
+}
 
 @media screen and (min-width: 1440px) {
   .display {
@@ -126,9 +173,24 @@ body {
     padding-top: 12px;
     font-size: 56px;
   }
+
+  .finish-score {
+    margin-top: 300px;
+    text-align: center;
+  }
+
+  .time-score {
+    margin-top: 0px;
+  }
+
+  .button-start {
+    margin-top: 400px;
+  }
+
 }
 
 @media screen and (min-width: 1920px) {
+
   .display {
     width: 1920px;
     height: 990px;
@@ -154,6 +216,22 @@ body {
     padding-top: 5px;
     font-size: 40px;
   }
+
+  .finish-score {
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-top: 400px;
+    width: 320px;
+    display: none;
+    font-size: 40px;
+    line-height: 1.5em;
+    text-align: center;
+  }
+
+  .time-score {
+    margin-top: 0px;
+  }
+
 }
 
 

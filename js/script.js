@@ -7,6 +7,9 @@ $(document).ready(function () {
   clickSound4 = new Audio();
   clickSound5 = new Audio();
 
+  music = new Audio();
+  music.src = 'sounds/music.mp3';
+
   clickSound1.src = 'sounds/clickSound1.mp3';
   clickSound2.src = 'sounds/clickSound2.mp3';
   clickSound3.src = 'sounds/clickSound3.mp3';
@@ -16,6 +19,7 @@ $(document).ready(function () {
   var sounds = [clickSound1, clickSound2, clickSound3, clickSound4, clickSound5];
 
   let point = 0;
+  const tryAgainBtn = $('.try-again-button');
   const grid = $('#grid');
   const gridChild = $('#grid div');
   const clock = $('.clock');
@@ -29,6 +33,7 @@ $(document).ready(function () {
     let time = performance.now();
     buttonStart.fadeOut(150);
     setTimeout(function () {
+      music.play();
       grid.css({'display': 'grid'});
       getCircle();
       scoreBlock.show();
@@ -118,7 +123,7 @@ $(document).ready(function () {
 
     function getTime() {
         clock.text(Math.round((performance.now() - time) / 1000));
-        if (parseInt(clock.text()) >= 30) {
+        if (parseInt(clock.text()) >= 60) {
           timeIsOver();
       }
     }
@@ -127,7 +132,15 @@ $(document).ready(function () {
       grid.fadeOut();
       timeBlock.fadeOut();
       scoreBlock.fadeOut();
-      finishScore.fadeIn().text(`Time is over!\nYour score: ${point}`);
+      setTimeout(function() {
+        finishScore.fadeIn().text(`Time is over!\nYour score: ${point}`);
+      }, 1500);
+      setTimeout(function() {
+        tryAgainBtn.fadeIn();
+      }, 4500);
+      tryAgainBtn.click(function() {
+        location.reload();
+      });
     }
 
 
