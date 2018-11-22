@@ -4,75 +4,63 @@ body {
 }
 
 .display {
-  width: 1280px;
-  height: 720px;
-  margin: 0 auto;
-  border: 1px black solid;
   background: radial-gradient(40% 50%, #FAECD5, #CAE4D8);
+  border: 1px #000 solid;
+  height: 630px;
+  margin: 0 auto;
+  width: 1280px;
 }
 
 #grid {
-  margin: 0 auto;
-  margin-top: 30px;
-  width: 1280px;
-  height: 720px;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 10px;
+  height: 550px;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 1250px;
 }
 
 #grid div {
-  border-radius: 50px;
   background-color: #000;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  padding-top: 18px;
-  font-size: 40px;
+  border-radius: 35px;
   box-sizing: border-box;
   color: #fff;
+  font-size: 40px;
+  height: 70px;
+  text-align: center;
   visibility: hidden;
+  width: 70px;
 }
 
 .start-button {
-  box-sizing: border-box;
-  padding-top: 8px;
-  font-size: 30px;
-  text-align: center;
   background-color: #fff;
+  box-sizing: border-box;
+  font-size: 30px;
   margin: 0 auto;
-  margin-top: 350px;
+  margin-top: 300px;
+  padding-top: 8px;
+  text-align: center;
+  text-transform: uppercase;
   height: 50px;
   width: 180px;
-  text-transform: uppercase;
 }
 
 .start-button:hover {
-  color: #fff;
   background-color: #000;
-  transition-duration: 0.5s;
+  color: #fff;
+  transition-duration: .5s;
 }
 
-.score-block {
-  background-color: white;
+.score-block, .time-block {
+  background-color: #fff;
   box-sizing: border-box;
   display: none;
-  font-size: 40px;
+  font-size: 30px;
   margin-left: 55px;
   text-align: center;
-  width: 200px;
   text-transform: uppercase;
-}
-
-.time-block {
-  background-color: white;
-  box-sizing: border-box;
-  display: none;
-  font-size: 40px;
-  margin-left: 55px;
-  text-align: center;
-  width: 200px;
-  text-transform: uppercase;
+  width: 150px;
 }
 
 .time-score {
@@ -80,36 +68,36 @@ body {
 }
 
 .finish-score {
-  text-transform: uppercase;
-  margin: 0 auto;
-  margin-top: 300px;
-  width: 300px;
   display: none;
-  font-size: 40px;
+  font-size: 35px;
   line-height: 1.5em;
+  margin: 0 auto;
+  margin-top: 240px;
   text-align: center;
+  text-transform: uppercase;
+  width: 300px;
 }
 
 .try-again-button {
-  margin: 0 auto;
-  margin-top: 20px;
-  width: 300px;
+  background-color: rgba(255, 255, 255, 0.7);
   display: none;
-  font-size: 40px;
+  font-size: 35px;
+  margin: 0 auto;
+  margin-top: 5px;
   text-align: center;
   text-transform: uppercase;
-  background-color: rgba(255, 255, 255, 0.7);
+  width: 300px;
 }
 
 .try-again-button:hover {
-  color: #fff;
   background-color: #000;
-  transition-duration: 0.5s;
+  color: #fff;
+  transition-duration: .5s;
 }
 
-@media screen and (min-width: 1336px) {
+@media screen and (min-width: 1366px) {
   .display {
-    width: 1336px;
+    width: 1366px;
     height: 695px;
   }
 
@@ -120,12 +108,12 @@ body {
 
   #grid div {
     border-radius: 50px;
-    width: 80px;
-    height: 80px;
     font-size: 50px;
+    height: 80px;
+    width: 80px;
   }
 
-  .button-start {
+  .start-button{
     margin-top: 300px;
   }
 
@@ -144,34 +132,36 @@ body {
   }
 
   .finish-score {
-    text-transform: uppercase;
-    margin: 0 auto;
     margin-top: 200px;
     width: 320px;
-    display: none;
-    font-size: 40px;
-    line-height: 1.5em;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .display {
-    width: 1440px;
     height: 810px;
+    width: 1440px;
   }
 
   #grid {
-    width: 1400px;
     height: 720px;
+    width: 1400px;
   }
 
   #grid div {
     border-radius: 44px;
-    width: 88px;
-    height: 88px;
-    text-align: center;
-    padding-top: 12px;
     font-size: 56px;
+    height: 88px;
+    padding-top: 12px;
+    text-align: center;
+    width: 88px;
+  }
+
+  .start-button {
+    font-size: 35px;
+    margin-top: 400px;
+    padding-top: 7px;
+    width: 220px;
   }
 
   .finish-score {
@@ -181,53 +171,46 @@ body {
   .time-score {
     margin-top: 0;
   }
-
-  .button-start {
-    margin-top: 400px;
-  }
 }
 
 @media screen and (min-width: 1920px) {
 
   .display {
-    width: 1920px;
     height: 990px;
+    width: 1920px;
   }
 
   #grid {
-    width: 1880px;
     height: 900px;
+    width: 1880px;
   }
 
   #grid div {
     border-radius: 50px;
-    width: 100px;
+    font-size: 68px;
     height: 100px;
     padding-top: 12px;
-    font-size: 68px;
+    width: 100px;
   }
 
-  .button-start {
+  .start-button {
+    font-size: 45px;
+    height: 70px;
     margin-top: 450px;
-    width: 250px;
-    height: 60px;
-    padding-top: 5px;
-    font-size: 40px;
+    padding-top: 10px;
+    width: 300px;
   }
 
   .finish-score {
-    text-transform: uppercase;
-    margin: 0 auto;
-    margin-top: 400px;
-    width: 320px;
-    display: none;
-    font-size: 40px;
-    line-height: 1.5em;
-    text-align: center;
+    font-size: 50px;
+    margin-top: 350px;
+    width: 400px;
   }
 
-  .time-score {
-    margin-top: 0;
+  .try-again-button {
+    margin-top: 10px;
+    font-size: 50px;
+    width: 350px;
   }
 }
 
