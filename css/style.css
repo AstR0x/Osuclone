@@ -34,7 +34,7 @@ body {
   visibility: hidden;
 }
 
-.button-start {
+.start-button {
   box-sizing: border-box;
   padding-top: 8px;
   font-size: 30px;
@@ -47,7 +47,7 @@ body {
   text-transform: uppercase;
 }
 
-.button-start:hover {
+.start-button:hover {
   color: #fff;
   background-color: #000;
   transition-duration: 0.5s;
@@ -92,7 +92,7 @@ body {
 
 .try-again-button {
   margin: 0 auto;
-  maring-top: 20px;
+  margin-top: 20px;
   width: 300px;
   display: none;
   font-size: 40px;
@@ -179,7 +179,7 @@ body {
   }
 
   .time-score {
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   .button-start {
@@ -227,7 +227,7 @@ body {
   }
 
   .time-score {
-    margin-top: 0px;
+    margin-top: 0;
   }
 }
 
