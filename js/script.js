@@ -1,22 +1,9 @@
 $(document).ready(function () {
 
-  clickSound1 = new Audio();
-  clickSound1 = new Audio();
-  clickSound2 = new Audio();
-  clickSound3 = new Audio();
-  clickSound4 = new Audio();
-  clickSound5 = new Audio();
-
   music = new Audio();
   music.src = 'sounds/music.mp3';
 
-  clickSound1.src = 'sounds/clickSound1.mp3';
-  clickSound2.src = 'sounds/clickSound2.mp3';
-  clickSound3.src = 'sounds/clickSound3.mp3';
-  clickSound4.src = 'sounds/clickSound4.mp3';
-  clickSound5.src = 'sounds/clickSound5.mp3';
-
-  let sounds = [clickSound1, clickSound2, clickSound3, clickSound4, clickSound5];
+  let sounds = [1, 2, 3, 4, 5].map(i => new Audio(`sounds/clickSound${i}.mp3`));
 
   let point = 0;
   const tryAgainBtn = $('.try-again-button');
