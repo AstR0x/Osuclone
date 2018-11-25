@@ -34,8 +34,6 @@ $(document).ready(function () {
       let amountOfCircle = getRandomNumber(3, 6, -1);
       let randomArray = getRandomArray(amountOfCircle, wrongNumber);
       wrongNumber = randomArray[randomArray.length - 1];
-      console.log(randomArray);
-      console.log(wrongNumber);
 
       for (let i = 1; i <= amountOfCircle; i++) {
         gridChild.eq(randomArray[i - 1]).css({'visibility':'visible', 'opacity':'1', //Появление кружков
@@ -61,10 +59,10 @@ $(document).ready(function () {
 
     function clickCircle() {
       let circle = $('.circle');
+      let lastCircle = $('.lastCircle');
       circle.each(function () {
         let circleNumber;
         $(this).click(function () {
-
           let id = ($(this).attr('id'));       //Получаем номер из
           let number = id[id.length - 1];      // класса кружочка
 
@@ -83,8 +81,8 @@ $(document).ready(function () {
               .removeClass('circle')
               .removeAttr('id');
 
-            if (!$('.lastCircle').hasClass('circle')) {   //Если последний кружочек уже был обработан
-              $('.lastCircle').removeClass('lastCircle'); //то удаляем класс и генерируем новый набор кружков
+            if (!lastCircle.hasClass('circle')) {   //Если последний кружочек уже был обработан
+              lastCircle.removeClass('lastCircle'); //то удаляем класс и генерируем новый набор кружков
               getCircle();
             }
           }
@@ -146,6 +144,5 @@ $(document).ready(function () {
         location.reload();
       });
     }
-
   });
 });
