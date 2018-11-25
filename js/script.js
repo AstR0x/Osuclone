@@ -23,7 +23,7 @@ $(document).ready(function () {
     let time = performance.now(); //Получаем начальное время
     buttonStart.fadeOut(150);
     setTimeout(function () {
-      // music.play();
+      music.play();
       getCircle();
       scoreBlock.show();
       timeBlock.show();
@@ -124,7 +124,7 @@ $(document).ready(function () {
 
     function getTime() {
         clock.text(Math.round((performance.now() - time) / 1000));
-        if (parseInt(clock.text()) >= 60) {
+        if (parseInt(clock.text()) >= 30) {
           timeIsOver();
       }
     }

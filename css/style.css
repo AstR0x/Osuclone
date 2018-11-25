@@ -159,7 +159,7 @@ body {
 
   .start-button {
     font-size: 35px;
-    margin-top: 400px;
+    margin-top: 380px;
     padding-top: 7px;
     width: 220px;
   }
@@ -169,6 +169,10 @@ body {
   }
 
   .time-score {
+    margin-top: 0;
+  }
+
+  .try-again-button {
     margin-top: 0;
   }
 }
