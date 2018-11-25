@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
-  music = new Audio();
-  music.src = 'sounds/music.mp3';
+  music = new Audio('sounds/music.mp3');
 
   let sounds = [1, 2, 3, 4, 5].map(i => new Audio(`sounds/clickSound${i}.mp3`));
 
@@ -16,7 +15,7 @@ $(document).ready(function () {
   const buttonStart = $('.start-button');
   const finishScore = $('.finish-score');
 
-  let lastNumberOfArray;
+  let wrongNumber;
 
   //Запуск игры по нажатию на 'start'
   buttonStart.click(function () {
@@ -24,7 +23,7 @@ $(document).ready(function () {
     let time = performance.now(); //Получаем начальное время
     buttonStart.fadeOut(150);
     setTimeout(function () {
-      music.play();
+      // music.play();
       getCircle();
       scoreBlock.show();
       timeBlock.show();
@@ -32,13 +31,11 @@ $(document).ready(function () {
     }, 150);
 
     function getCircle() {
-      let amountOfCircle = getRandomNumber(3, 6);
-      let randomArray = getRandomArray(amountOfCircle, lastNumberOfArray);
-
-      lastNumberOfArray = randomArray[randomArray.length - 1];
-
+      let amountOfCircle = getRandomNumber(3, 6, -1);
+      let randomArray = getRandomArray(amountOfCircle, wrongNumber);
+      wrongNumber = randomArray[randomArray.length - 1];
       console.log(randomArray);
-      console.log(lastNumberOfArray);
+      console.log(wrongNumber);
 
       for (let i = 1; i <= amountOfCircle; i++) {
         gridChild.eq(randomArray[i - 1]).css({'visibility':'visible', 'opacity':'1', //Появление кружков
@@ -50,7 +47,7 @@ $(document).ready(function () {
           .text(i)
           .attr('id', `circleNumber${i}`);
 
-        if (i == amountOfCircle) {
+        if (i === amountOfCircle) {
           gridChild.eq(randomArray[i - 1]).addClass('circle lastCircle'); //Последний кружок из группы получает
         }                                                                 //класс lastCircle
         else {
@@ -74,7 +71,7 @@ $(document).ready(function () {
           for (let i = 1; i <= number; i++) {      //Обрабатываем кружочек,
             circleNumber = $(`#circleNumber${i}`); //по которому нажали и все предшествующие
 
-            if (i == number) {
+            if (i === number) {
               circleNumber.text('\u2713').css({'padding-top':'6px'});
             } else {
               circleNumber
@@ -96,16 +93,15 @@ $(document).ready(function () {
           getSound();
         });
       })
-    };
+    }
 
-    function getRandomArray(amount, lastNumberOfArray) {
+    function getRandomArray(amount, wrongNumber) {
       let arrayOfRandomUniqueNumber = [];
       let randomNumber;
-      arrayOfRandomUniqueNumber[0] = getRandomNumber(0, 59);
-
+      arrayOfRandomUniqueNumber[0] = getRandomNumber(0, 59, wrongNumber);
       for (let i = 1; i < amount;) {
-        randomNumber = getRandomNumber(0, 59);
-        if (arrayOfRandomUniqueNumber.indexOf(randomNumber) !== -1 || randomNumber === lastNumberOfArray) {
+        randomNumber = getRandomNumber(0, 59, wrongNumber);
+        if (arrayOfRandomUniqueNumber.indexOf(randomNumber) !== -1) {
           continue;
         }
         arrayOfRandomUniqueNumber[i] = randomNumber;
@@ -114,8 +110,12 @@ $(document).ready(function () {
       return arrayOfRandomUniqueNumber;
     }
 
-    function getRandomNumber(min, max) {
-      return Math.round((Math.random() * (max - min) + min))
+    function getRandomNumber(min, max, wrongNumber) {
+      let randomNumber = Math.round((Math.random() * (max - min) + min));
+      while(randomNumber === wrongNumber) {
+        randomNumber = Math.round((Math.random() * (max - min) + min));
+      }
+      return randomNumber;
     }
 
     function getSound() {
@@ -124,7 +124,7 @@ $(document).ready(function () {
 
     function getTime() {
         clock.text(Math.round((performance.now() - time) / 1000));
-        if (parseInt(clock.text()) >= 30) {
+        if (parseInt(clock.text()) >= 60) {
           timeIsOver();
       }
     }
