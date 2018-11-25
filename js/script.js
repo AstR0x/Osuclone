@@ -69,7 +69,7 @@ $(document).ready(function () {
           for (let i = 1; i <= number; i++) {      //Обрабатываем кружочек,
             circleNumber = $(`#circleNumber${i}`); //по которому нажали и все предшествующие
 
-            if (i === number) {
+            if (i == number) {
               circleNumber.text('\u2713').css({'padding-top':'6px'});
             } else {
               circleNumber
