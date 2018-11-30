@@ -33,6 +33,7 @@ $(document).ready(function () {
     function getCircle() {
       let amountOfCircle = getRandomNumber(3, 6, -1);
       let randomArray = getRandomArray(amountOfCircle, wrongNumber);
+      console.log(randomArray);
       wrongNumber = randomArray[randomArray.length - 1];
 
       for (let i = 1; i <= amountOfCircle; i++) {
@@ -59,7 +60,6 @@ $(document).ready(function () {
 
     function clickCircle() {
       let circle = $('.circle');
-      let lastCircle = $('.lastCircle');
       circle.each(function () {
         let circleNumber;
         $(this).click(function () {
@@ -81,8 +81,8 @@ $(document).ready(function () {
               .removeClass('circle')
               .removeAttr('id');
 
-            if (!lastCircle.hasClass('circle')) {   //Если последний кружочек уже был обработан
-              lastCircle.removeClass('lastCircle'); //то удаляем класс и генерируем новый набор кружков
+            if (!$('.lastCircle').hasClass('circle')) {   //Если последний кружочек уже был обработан
+              $('.lastCircle').removeClass('lastCircle'); //то удаляем класс и генерируем новый набор кружков
               getCircle();
             }
           }
@@ -122,7 +122,7 @@ $(document).ready(function () {
 
     function getTime() {
         clock.text(Math.round((performance.now() - time) / 1000));
-        if (parseInt(clock.text()) >= 30) {
+        if (parseInt(clock.text()) >= 1800) {
           timeIsOver();
       }
     }
