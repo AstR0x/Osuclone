@@ -122,7 +122,7 @@ $(document).ready(function () {
 
     function getTime() {
         clock.text(Math.round((performance.now() - time) / 1000));
-        if (parseInt(clock.text()) >= 1800) {
+        if (parseInt(clock.text()) >= 30) {
           timeIsOver();
       }
     }
