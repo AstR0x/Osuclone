@@ -7,7 +7,7 @@ The clone of the popular rhythm game osu! In this game you need to quickly click
 3. Launch index.html
 
 ## Screenshot
-![screenshot](https://github.com/AstR0x/astro-weather/blob/master/img/screenshot/screenshot.png)
+![screenshot](https://github.com/AstR0x/osu-clone/blob/master/img/screenshot.png)
 
 
 
