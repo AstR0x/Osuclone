@@ -11,7 +11,7 @@ The clone of the popular rhythm game osu! In this game you need to quickly click
 3. Launch index.html
 
 ## Screenshot
-![screenshot](https://github.com/AstR0x/osu-clone/blob/master/img/screenshot.png)
+![screenshot](https://github.com/AstR0x/astr0x.github.io/blob/master/screenshots/osu-clone.png)
 
 
 
